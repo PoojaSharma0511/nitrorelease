@@ -10,14 +10,12 @@ y = np.zeros(196)
 
 data = np.loadtxt("3NP_train_196_6march.out")
 X_orig=data[:,:2]
+X_train = X_orig
 
-X=X_orig
-X_train = X
-
+#load test data set
 data_train = np.loadtxt("test_nitrophenol_625pts.out")
 x_test=data_train[:,:2]
 y_test=data_train[:,2]
-
 
 n=len(X)
 print(n)
@@ -29,7 +27,8 @@ for i in range(n):
   for j in range(n):
     distsq=np.sum((X_train[i,:]-X_train[j,:])**2/(p2*p2))
     kern[i,j]=np.exp(-0.5*distsq)
-
+    
+#generating kernel and alpha matrix to be used for prediction at the time of dynamics
 fil = open('kernel_3NP_196_6march.out', 'w')
 for i in range(n):
   print(X_train[i,0],X_train[i,1],file=fil)
