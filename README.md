@@ -7,7 +7,8 @@ Training data files are created for nitrobenzene, o-nitroanisole, o-nitrophenol 
 Step 2: Training the Machine learning model
 Hyperparameter optimization is done while training to get optimized length value for the molecules using program 'training.py'.
 
-Step 3: generation of kernel and alpha files for prediction
+Step 3: Generation of kernel and alpha files for prediction
 Optimized hyperparametrs are used in program kernel.py to get kernel_mol.inp and alpha_mol.inp files.
 
-Step 4:
+Step 4: Running dynamics
+Kernel and alpha files are used in molecular dynamics simulations to get the number of trajectories falling in the two pathways. 
