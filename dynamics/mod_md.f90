@@ -138,8 +138,8 @@ mass(2)=6.46d0*amu2kg
 !stop
 
 
-  open(30,file="alpha_NA_196_24jan.inp")
-  open(31,file="kernel_NA_196_24jan.inp")
+  open(30,file="alpha_mol.inp")
+  open(31,file="kernel_mol.inp")
   do i=1,ntrain
     read(30,*)alpha(i)
     read(31,*)x_train(i,:)
@@ -259,7 +259,7 @@ subroutine compute_paths
     if_react=1
     if_ts=0
   endif
-
+! Value for x(1) and x(2) can be taken from the manuscript for the different molecules.
 !  if(x(1)<1.8d-10 .and. x(2)>2.5d-10) then
 !   if(if_ts==1) path1=path1+1
 !    if(if_ts==2) path2=path2+1
@@ -271,13 +271,11 @@ subroutine compute_paths
   if(if_ts==0) then
 
    if(x(1)<2.d-10 .and. x(2)<2.d-10 .and.  if_react==1) then
-!      path1=path1+1
       if_ts=1
 !write(6,*) "path1",curr_time*1.d15,x*1.d10
     endif
 
     if(x(1)>2.2d-10 .and. x(2)>2.d-10  .and. if_react==1) then
-!      path2=path2+1
       if_ts=2
 !write(6,*) "path2",curr_time*1.d15,x*1.d10
     endif
@@ -291,8 +289,6 @@ subroutine compute_paths
     if_react=0
     if_ts=0
   endif
-
-
 
 end subroutine compute_paths
 !-----------------------------------------------------------------  
