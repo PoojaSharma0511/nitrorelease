@@ -1,1 +1,1 @@
-This folder contains all the files used to generate potential energy surfaces and run dynamics. Input files (kernel_mol.inp and alpha_mol.inp) can be taken from the folder. 
+This folder contains all the files used to run dynamics. The program can be used to generate potential energy surfaces also by uncommenting the draw_pes subroutine. Input files (kernel_mol.inp and alpha_mol.inp) can be taken from the folder. 
