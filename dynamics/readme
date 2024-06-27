@@ -1,0 +1,1 @@
+This folder contains all the files used to generate potential energy surfaces and run dynamics. Input files (kernel_mol.inp and alpha_mol.inp) can be taken from the folder. 
