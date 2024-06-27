@@ -1,0 +1,12 @@
+3                           !! iflow
+80                          !! iproc
+20                          !! iparallel
+120                         !! iwait
+1.d-15        !! dt
+100.d-12      !! tot_time
+1000          !! ntraj
+1800.d0       !! temperature
+1             !! ifriction
+0             !! iwrite
+1729 1941
+x
