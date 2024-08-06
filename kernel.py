@@ -8,14 +8,14 @@ from sklearn.gaussian_process.kernels import RBF
 X = np.zeros((196,2))
 y = np.zeros(196)
 
-data = np.loadtxt("3NP_train_196_6march.out")
-X_orig=data[:,:2]
-X_train = X_orig
+data_train = np.loadtxt("3NP_train_196_6march.out")
+X_train = data_train[:,:2]
+y_train = data_train[:, 2]
 
 #load test data set
-data_train = np.loadtxt("test_nitrophenol_625pts.out")
-x_test=data_train[:,:2]
-y_test=data_train[:,2]
+data_test = np.loadtxt("test_nitrophenol_625pts.out")
+x_test=data_test[:,:2]
+y_test=data_test[:,2]
 
 n=len(X)
 print(n)
