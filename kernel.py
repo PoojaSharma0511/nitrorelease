@@ -9,8 +9,18 @@ X = np.zeros((196,2))
 y = np.zeros(196)
 
 data_train = np.loadtxt("3NP_train_196_6march.out")
-X_train = data_train[:,:2]
-y_train = data_train[:, 2]
+X_orig = data_train[:,:2]
+y = data_train[:, 2]
+
+#normalize the y
+y_avg=sum(y_orig)/len(y)
+y = y_orig - y_avg
+cons = np.sqrt(len(y)/np.sum(y*y))
+y = cons*y
+print(cons,y_avg)
+
+X_train = X_orig
+y_train = y
 
 #load test data set
 data_test = np.loadtxt("test_nitrophenol_625pts.out")
